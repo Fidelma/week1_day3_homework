@@ -12,3 +12,19 @@ stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Ha
 # 10. Print out all the stops using a for loop
 
 stops.push("Edinburgh Waverley")
+
+stops.unshift("Glasgow Queen St")
+
+stops.insert(4, "Polmont")
+
+p stops.index("Linlithgow")
+
+stops.delete("Livingston")
+
+stops.delete_at(2)
+
+p stops.length
+
+
+
+p stops
