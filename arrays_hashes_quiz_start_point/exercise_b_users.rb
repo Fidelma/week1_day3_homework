@@ -55,7 +55,7 @@ users = {
 }
 
 # 1. Get Jonathan's Twitter handle (i.e. the string `"jonnyt"`)
-# p users.dig("Jonathan", :twitter)
+# p users.dig("Jonathan", :twitter) #p users["Jonathon"][:twitter]
 
 # 2. Get Erik's hometown
 # p users.dig("Erik", :home_town)
@@ -65,16 +65,26 @@ users = {
 
 # 4. Get the type of Avril's pet Monty
 # p users.dig("Avril", :pets, 0, :species)
+# p users["Avril"][:pets][0][:species]
 
 
 # 5. Get the smallest of Erik's lottery numbers
 # p (users.dig("Erik", :lottery_numbers)).min
+#p users["Erik"][:lottery_numbers].min
 
 # 6. Return an array of Avril's lottery numbers that are even
 # p (users.dig("Avril", :lottery_numbers)).select(&:even?)
 
+# result = []
+# for number in users["Avril"][:lottery_numbers]
+#  result << number if(number.even?)
+# end
+# p result
+
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
 # p (users.dig("Erik", :lottery_numbers)).push(7)
+# users["Erik"][:lottery_numbers] << 7
+# users["Erik"][:lottery_numbers].push(7)
 
 # 8. Change Erik's hometown to Edinburgh
 # users["Erik"][:home_town] = "Edinburgh"
